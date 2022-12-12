@@ -17,6 +17,11 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { LoginComponent } from './components/login/login.component';
+import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -26,21 +31,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     PostsComponent,
     CardComponent,
     DetailComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatListModule,
-    MatCardModule,
-    HttpClientModule,
-    MatCardModule,
-    MatIconModule,
-    MatToolbarModule
+    MatListModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
