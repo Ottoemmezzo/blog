@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { EditComponent } from './components/edit/edit.component';
  //Importazione di material
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 
@@ -32,6 +34,8 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatListModule,
+    MatCardModule,
+    HttpClientModule,
     MatCardModule,
     MatIconModule
   ],
