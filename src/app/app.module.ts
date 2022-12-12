@@ -11,6 +11,11 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import {MatSidenavModule} from '@angular/material/sidenav'; //Importazione di material
 import {MatListModule} from '@angular/material/list';
+import { LoginComponent } from './components/login/login.component';
+import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -20,16 +25,22 @@ import {MatListModule} from '@angular/material/list';
     PostsComponent,
     CardComponent,
     DetailComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
