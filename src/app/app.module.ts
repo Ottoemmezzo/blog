@@ -10,9 +10,12 @@ import { PostsComponent } from './components/posts/posts.component';
 import { CardComponent } from './components/card/card.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
-import {MatSidenavModule} from '@angular/material/sidenav'; //Importazione di material
+
+ //Importazione di material
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -31,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    HttpClientModule
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
