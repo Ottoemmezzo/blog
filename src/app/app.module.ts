@@ -9,8 +9,12 @@ import { PostsComponent } from './components/posts/posts.component';
 import { CardComponent } from './components/card/card.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
-import {MatSidenavModule} from '@angular/material/sidenav'; //Importazione di material
+
+ //Importazione di material
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -27,7 +31,9 @@ import {MatListModule} from '@angular/material/list';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
