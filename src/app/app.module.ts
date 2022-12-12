@@ -16,6 +16,7 @@ import {MatListModule} from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     HttpClientModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
