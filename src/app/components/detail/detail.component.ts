@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { Posts } from 'src/app/models/posts.interface';
 import { FetchService } from 'src/app/services/fetch.service';
+
 
 @Component({
   selector: 'app-detail',
@@ -11,13 +11,21 @@ import { FetchService } from 'src/app/services/fetch.service';
 })
 export class DetailComponent implements OnInit {
 
-  sub!: Subscription
   id!: number
+  post!: Posts;
 
   constructor(private router: ActivatedRoute, private fetchSrv: FetchService) { }
 
-  ngOnInit(): void {
+  ngOnInit():void {
+    this.id = this.router.snapshot.params['id'];
+    this.detail();
+  }
 
+  detail() {
+    this.fetchSrv.getD(this.id).subscribe(data => {
+      this.post = data;
+      console.log(data)
+    })
   }
 
 }

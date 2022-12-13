@@ -1,1 +1,15 @@
-<p>edit works!</p>
+<div class="container">
+    <h1>Update</h1>
+  <form #edit="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <label for="title">Post Title</label>
+      <input id="title" matInput required name="title" [(ngModel)]="post.title" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label for="body">Post Body</label>
+      <textarea rows="5" cols="40" id="body" matInput required name="body" [(ngModel)]="post.body"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="warn" type="submit" [disabled]="!edit.valid">Update</button>
+  </form>
+  </div>
+
