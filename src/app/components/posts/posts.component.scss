@@ -41,3 +41,8 @@ mat-toolbar{
   display: flex;
   align-items: baseline;
 }
+
+.between {
+  display: flex;
+  flex-direction: column;
+}
