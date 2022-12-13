@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MaterialModule} from './material/materialmodule';
 
 
 @NgModule({
