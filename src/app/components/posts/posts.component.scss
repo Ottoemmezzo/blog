@@ -24,3 +24,27 @@ button {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.btn {
+  border-radius: 6px;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: baseline;
+}

@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { CardComponent } from './components/card/card.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { PostsComponent } from './components/posts/posts.component';
 
 const routes: Routes = [
   {
     path: 'post',
-    component:PostsComponent,
+    component: PostsComponent
   },
   {
-    path: 'card',
-    component:CardComponent
+    path: 'post/:id',
+    component: DetailComponent
+  },
+  {
+    path: 'add',
+    component: AddPostComponent
   }
 ];
 

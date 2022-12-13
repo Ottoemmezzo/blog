@@ -16,7 +16,16 @@ export class FetchService {
     return this.http.get<Posts[]>(this.Url).pipe(map(ris => ris));
   }
 
+  getD(id: number) {
+    return this.http.get<Posts>(`${this.Url}/${id}`).pipe(map(ris => ris));
+  }
 
+  addPost(post: {title: string, body: string}) {
+    return this.http.post<Posts>(this.Url, post);
+  }
 
+  removePost(id: number) {
+    return this.http.delete(`${this.Url}/${id}`);
+  }
 
 }

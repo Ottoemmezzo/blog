@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Posts } from 'src/app/models/posts.interface';
+import { FetchService } from 'src/app/services/fetch.service';
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  sub!: Subscription
+  id!: number
+
+  constructor(private router: ActivatedRoute, private fetchSrv: FetchService) { }
 
   ngOnInit(): void {
+
   }
 
 }
