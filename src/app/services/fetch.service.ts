@@ -16,4 +16,6 @@ export class FetchService {
     return this.http.get<Posts[]>(this.Url).pipe(map(ris => ris));
   }
 
+
+
 }

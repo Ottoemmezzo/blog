@@ -15,10 +15,10 @@
       <button mat-button>
         <mat-icon>delete_forever</mat-icon>
       </button>
-      <button mat-button>
+      <button mat-button routerLink="card" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <mat-icon>create</mat-icon>
       </button>
-      <button mat-button>
+      <button mat-button routerLink="dettagli" routerLinkActive="active">
         <mat-icon>open_in_new</mat-icon>
       </button>
     </mat-card-actions>
