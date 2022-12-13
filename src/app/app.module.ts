@@ -9,6 +9,8 @@ import { PostsComponent } from './components/posts/posts.component';
 import { CardComponent } from './components/card/card.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
+import { FormsModule } from '@angular/forms';
 
  //Importazione di material
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -17,7 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MaterialModule} from './material/materialmodule';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -27,7 +32,8 @@ import {MaterialModule} from './material/materialmodule';
     PostsComponent,
     CardComponent,
     DetailComponent,
-    EditComponent
+    EditComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,11 @@ import {MaterialModule} from './material/materialmodule';
     HttpClientModule,
     MatCardModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
