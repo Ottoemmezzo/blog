@@ -3,7 +3,7 @@
 <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm)">
   <mat-form-field appearance="fill">
     <label for="title">Post Title</label>
-    <input id="title" matInput required name="title" ngModel formControlName="title" />
+    <input id="title" matInput required name="title" ngModel />
   </mat-form-field>
   <mat-form-field appearance="fill">
     <label for="image">Post Image</label>
@@ -11,7 +11,7 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <label for="body">Post Body</label>
-    <textarea rows="5" cols="40" id="body" matInput required name="body" ngModel formControlName="body"></textarea>
+    <textarea rows="5" cols="40" id="body" matInput required name="body" ngModel></textarea>
   </mat-form-field>
   <button mat-raised-button color="warn" type="submit" [disabled]="!addForm.valid">Submit</button>
 </form>

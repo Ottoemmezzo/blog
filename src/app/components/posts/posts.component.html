@@ -33,14 +33,15 @@
         <button mat-fab color="warn" (click)="remove(post.id)" aria-label="Example icon button with a home icon">
           <mat-icon>delete_forever</mat-icon>
         </button>
-        <button mat-fab color="warn" aria-label="Example icon button with a home icon" [routerLink]="['/post/edit/', post.id]">
+        <button mat-fab color="warn" [routerLink]="['/post/edit/', post.id]" aria-label="Example icon button with a home icon">
           <mat-icon>create</mat-icon>
         </button>
-        <button mat-fab color="warn" [routerLink]="['/post', post.id]"
+        <button mat-fab color="warn" [routerLink]="['/post/', post.id]"
           aria-label="Example icon button with a home icon">
           <mat-icon>open_in_new</mat-icon>
         </button>
       </mat-card-actions>
     </div>
+>>>>>>>>> Temporary merge branch 2
   </mat-card>
 </div>
