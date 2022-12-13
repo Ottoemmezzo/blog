@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PostsComponent } from './components/posts/posts.component';
-import { CardComponent } from './components/card/card.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
@@ -33,7 +32,6 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     SidebarComponent,
     PostsComponent,
-    CardComponent,
     DetailComponent,
     EditComponent,
     AddPostComponent
