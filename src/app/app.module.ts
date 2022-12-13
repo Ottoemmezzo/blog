@@ -54,8 +54,6 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatButtonModule,
     MatInputModule
-    MatButtonModule,
-    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],
