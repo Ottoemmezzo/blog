@@ -9,14 +9,7 @@
 }
 
 button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: orangered;
-  border: none;
-  outline: none;
-  margin-right: 5px;
-  cursor: pointer;
+  margin: 5px;
 }
 
 .container{
@@ -47,4 +40,9 @@ mat-toolbar{
   height: auto;
   display: flex;
   align-items: baseline;
+}
+
+.between {
+  display: flex;
+  flex-direction: column;
 }
