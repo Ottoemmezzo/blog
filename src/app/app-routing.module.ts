@@ -8,11 +8,7 @@ import { PostsComponent } from './components/posts/posts.component';
 const routes: Routes = [
   {
     path: 'post',
-    component:PostsComponent
-  },
-  {
-    path: 'dettagli',
-    component:DetailComponent
+    component:PostsComponent,
   },
   {
     path: 'card',
