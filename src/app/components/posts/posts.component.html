@@ -33,7 +33,7 @@
         <button mat-fab color="warn" (click)="remove(post.id)" aria-label="Example icon button with a home icon">
           <mat-icon>delete_forever</mat-icon>
         </button>
-        <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+        <button mat-fab color="warn" aria-label="Example icon button with a home icon" [routerLink]="['/post/edit/', post.id]">
           <mat-icon>create</mat-icon>
         </button>
         <button mat-fab color="warn" [routerLink]="['/post', post.id]"
