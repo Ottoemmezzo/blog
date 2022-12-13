@@ -6,6 +6,10 @@
     <input id="title" matInput required name="title" ngModel formControlName="title" />
   </mat-form-field>
   <mat-form-field appearance="fill">
+    <label for="image">Post Image</label>
+    <input id="image" matInput placeholder="Insert image URL" required name="image" ngModel>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
     <label for="body">Post Body</label>
     <textarea rows="5" cols="40" id="body" matInput required name="body" ngModel formControlName="body"></textarea>
   </mat-form-field>
