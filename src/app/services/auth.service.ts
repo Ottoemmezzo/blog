@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
+import { BehaviorSubject, map, ReplaySubject, Subject } from 'rxjs';
+import { tap } from 'rxjs';
 
 export interface Register {
   // name: string,
@@ -23,6 +25,14 @@ export class AuthService {
 
   user: User | undefined;
 
+  // authSubject = new BehaviorSubject<null|User>(null);
+  // user$ = this.authSubject.asObservable()
+  // isLoggedIn$ = this.user$.pipe(map(u=>!!u))
+
+
+   isLoggedin =  new BehaviorSubject<boolean>(false);
+   toggle = this.isLoggedin.asObservable();
+
   constructor(private http: HttpClient ) { }
 
   signUp(user: {}){
@@ -30,6 +40,13 @@ export class AuthService {
   }
 
   signIn(user: {}){
-   return this.http.post(this.urlIn, user);
+   return this.http.post<User>(this.urlIn, user).pipe(tap(data => {
+    // this.authSubject.next(data);
+    this.isLoggedin.next(true);
+   }));
+  }
+
+  createUser(email: string, id:string, token:string, expirationDate: Date){
+    this.user = new User(email, id, token, expirationDate)
   }
 }
