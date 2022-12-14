@@ -31,20 +31,20 @@ export class AuthService {
   // isLoggedIn$ = this.user$.pipe(map(u=>!!u))
 
 
-   isLoggedin =  new BehaviorSubject<boolean>(false);
-   toggle = this.isLoggedin.asObservable();
+  isLoggedin = new BehaviorSubject<boolean>(false);
+  toggle = this.isLoggedin.asObservable();
 
-  constructor(private http: HttpClient, private router: Router ) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  signUp(user: {}){
-   return this.http.post(this.urlUp, user);
+  signUp(user: {}) {
+    return this.http.post(this.urlUp, user);
   }
 
-  signIn(user: {}){
-   return this.http.post<User>(this.urlIn, user).pipe(tap(data => {
-    // this.authSubject.next(data);
-    this.isLoggedin.next(true);
-   }));
+  signIn(user: {}) {
+    return this.http.post<User>(this.urlIn, user).pipe(tap(data => {
+      // this.authSubject.next(data);
+      this.isLoggedin.next(true);
+    }));
   }
 
   logOut() {
@@ -53,7 +53,7 @@ export class AuthService {
     this.router.navigate(['/login'])
   }
 
-  createUser(email: string, id:string, token:string, expirationDate: Date){
+  createUser(email: string, id: string, token: string, expirationDate: Date) {
     this.user = new User(email, id, token, expirationDate)
   }
 }
