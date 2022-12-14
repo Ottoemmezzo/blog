@@ -26,6 +26,7 @@ import { LoginComponent } from './components/login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import { RegisterComponent } from './components/register/register.component';
 import { InterceptorInterceptor } from './interceptor.interceptor';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -38,7 +39,8 @@ import { InterceptorInterceptor } from './interceptor.interceptor';
     EditComponent,
     AddPostComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
