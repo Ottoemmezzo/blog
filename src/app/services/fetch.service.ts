@@ -10,6 +10,7 @@ import { map } from 'rxjs';
 export class FetchService {
   posts: Posts[] = []
   Url = 'https://6396ee0a86d04c763384ef91.mockapi.io/posts';
+
   constructor(private http: HttpClient) { }
 
   get() {
@@ -27,5 +28,6 @@ export class FetchService {
   removePost(id: number) {
     return this.http.delete(`${this.Url}/${id}`);
   }
+
 
 }
