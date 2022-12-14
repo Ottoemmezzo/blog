@@ -4,4 +4,5 @@ export interface Posts {
     title: string,
     body: string,
     image: string
+    author: string
 }
