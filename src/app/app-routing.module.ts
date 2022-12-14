@@ -6,11 +6,15 @@ import { EditComponent } from './components/edit/edit.component';
 import { LoginComponent } from './components/login/login.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
     path: 'post',
-    component: PostsComponent
+    component: PostsComponent,
+    canActivate: [
+      AuthGuard
+    ]
   },
   {
     path: 'post/:id',

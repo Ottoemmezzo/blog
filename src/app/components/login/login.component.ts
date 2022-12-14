@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -24,11 +24,21 @@ export class LoginComponent implements OnInit {
   }
   hide = true;
 
-  onSubmit(f: NgForm){
-    const email= f.value.email;
+  onSubmit(f: NgForm) {
+    const email = f.value.email;
     const password = f.value.password;
     console.log(f.value);
 
-    this.authSrv.signIn({email: email, password: password, returnSecureToken: true}).subscribe(data => console.log(data));
+    this.authSrv.signIn({ email: email, password: password, returnSecureToken: true }).subscribe((data:any) => {
+      console.log(data)
+      const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000)
+      this.authSrv.createUser(data.email, data.localId, data.idToken,expirationDate)
+      console.log(this.authSrv.user);
+      localStorage.setItem('user', JSON.stringify(this.authSrv.user))
+      }
+
+    )
+      ;
+
   }
 }

@@ -15,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
  //Importazione di material
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -25,6 +25,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import { RegisterComponent } from './components/register/register.component';
+import { InterceptorInterceptor } from './interceptor.interceptor';
 
 
 
@@ -57,8 +58,12 @@ import { RegisterComponent } from './components/register/register.component';
     MatInputModule,
     ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
-  exports: [ MatFormFieldModule, MatInputModule ]
+  providers: [
+    {provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorInterceptor,
+      multi:true
+    }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
