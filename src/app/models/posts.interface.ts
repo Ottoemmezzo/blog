@@ -3,6 +3,5 @@ export interface Posts {
     userId: number,
     title: string,
     body: string,
-    image: string,
-    author: string
+    image: string
 }

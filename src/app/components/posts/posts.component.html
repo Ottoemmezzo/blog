@@ -22,25 +22,22 @@
       <mat-card-title>{{post.title}}</mat-card-title>
       <mat-card-subtitle>{{post.id}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{post.image}}" alt="Photo of a Shiba Inu">
-    <div class="between">
-      <mat-card-content>
-        <p>
-          {{post.body}}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-fab color="warn" (click)="remove(post.id)" aria-label="Example icon button with a home icon">
-          <mat-icon>delete_forever</mat-icon>
-        </button>
-        <button mat-fab color="warn" [routerLink]="['/post/edit/', post.id]" aria-label="Example icon button with a home icon">
-          <mat-icon>create</mat-icon>
-        </button>
-        <button mat-fab color="warn" [routerLink]="['/post/', post.id]"
-          aria-label="Example icon button with a home icon">
-          <mat-icon>open_in_new</mat-icon>
-        </button>
-      </mat-card-actions>
-    </div>
+    <img mat-card-image src="{{ post.image }}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{post.body}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="remove(post.id)">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+      <a mat-button [routerLink]="['/post/edit/' + post.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon>create</mat-icon>
+      </a>
+      <a mat-button [routerLink]="['/post/' + post.id]">
+        <mat-icon>open_in_new</mat-icon>
+      </a>
+    </mat-card-actions>
   </mat-card>
 </div>
