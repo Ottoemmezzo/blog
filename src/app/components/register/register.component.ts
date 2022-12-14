@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { FetchService } from 'src/app/services/fetch.service';
 
@@ -13,7 +14,7 @@ import { FetchService } from 'src/app/services/fetch.service';
 export class RegisterComponent implements OnInit {
 
   email = new FormControl('', [Validators.required, Validators.email]);
-  constructor( private AuthSrv: AuthService) { }
+  constructor( private AuthSrv: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -31,10 +32,8 @@ export class RegisterComponent implements OnInit {
   onSubmit(f: NgForm){
     const email = f.value.email;
     const password = f.value.password;
-
-
     this.AuthSrv.signUp({email: email, password: password, returnSecureToken: true}).subscribe(data => console.log(f.value));
-
+    this.router.navigate(['/login'])
   }
 
 }

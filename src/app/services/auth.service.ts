@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { BehaviorSubject, map, ReplaySubject, Subject } from 'rxjs';
 import { tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 export interface Register {
   // name: string,
@@ -33,7 +34,7 @@ export class AuthService {
    isLoggedin =  new BehaviorSubject<boolean>(false);
    toggle = this.isLoggedin.asObservable();
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient, private router: Router ) { }
 
   signUp(user: {}){
    return this.http.post(this.urlUp, user);
@@ -44,6 +45,12 @@ export class AuthService {
     // this.authSubject.next(data);
     this.isLoggedin.next(true);
    }));
+  }
+
+  logOut() {
+    this.isLoggedin.next(false);
+    localStorage.removeItem('user')
+    this.router.navigate(['/login'])
   }
 
   createUser(email: string, id:string, token:string, expirationDate: Date){

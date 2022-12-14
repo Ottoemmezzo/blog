@@ -21,6 +21,10 @@ const routes: Routes = [
     component: DetailComponent
   },
   {
+    path: '',
+    component: LoginComponent
+  },
+  {
     path: 'post/edit/:id',
     component: EditComponent
   },

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
-  constructor(private authSrv: AuthService) { }
+  constructor(private authSrv: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
       this.authSrv.createUser(data.email, data.localId, data.idToken,expirationDate)
       console.log(this.authSrv.user);
       localStorage.setItem('user', JSON.stringify(this.authSrv.user))
+      this.router.navigate(['/post'])
       }
 
     )
