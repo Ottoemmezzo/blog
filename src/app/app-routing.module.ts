@@ -5,6 +5,7 @@ import { AddPostComponent } from './components/add-post/add-post.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'add',
     component: AddPostComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 ];
 

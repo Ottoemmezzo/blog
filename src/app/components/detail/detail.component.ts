@@ -13,6 +13,7 @@ export class DetailComponent implements OnInit {
 
   id!: number
   post!: Posts;
+  loading = true;
 
   constructor(private router: ActivatedRoute, private fetchSrv: FetchService) { }
 
@@ -25,6 +26,7 @@ export class DetailComponent implements OnInit {
     this.fetchSrv.getD(this.id).subscribe(data => {
       this.post = data;
       console.log(data)
+      this.loading = false;
     })
   }
 
