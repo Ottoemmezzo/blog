@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FetchService } from 'src/app/services/fetch.service';
 
+
 @Component({
   selector: 'app-add-post',
   templateUrl: './add-post.component.html',
@@ -13,6 +14,7 @@ export class AddPostComponent implements OnInit {
   constructor(private authSrv: FetchService, private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   onSubmit(form: NgForm) {

@@ -1,1 +1,12 @@
-<button (click)="print()"></button>
+<h1>Post Detail</h1>
+<div class="spinner">
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
+<div class="details">
+  <img src="{{post.image}}" alt="">
+  <div>
+    <h2>Titolo: {{post.title}}</h2>
+    <h3>Body: {{post.body}}</h3>
+    <p>Author: {{post.author}}</p>
+  </div>
+</div>
