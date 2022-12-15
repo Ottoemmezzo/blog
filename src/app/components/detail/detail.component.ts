@@ -13,11 +13,25 @@ export class DetailComponent implements OnInit {
 
   sub!: Subscription
   id!: number
+  orderby!: string;
 
   constructor(private router: ActivatedRoute, private fetchSrv: FetchService) { }
 
   ngOnInit(): void {
 
+    this.router.queryParams
+      .subscribe(params => {
+        console.log(params); // { orderby: "price" }
+        this.orderby = params['id'];
+        console.log(this.orderby); // price
+      }
+      );
+    }
+  }
+
+
+  print(){
+   //this.fetchSrv.getD(this.orderby);
   }
 
 }
