@@ -1,4 +1,4 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/add">
     <mat-icon>add</mat-icon>
   </button>
@@ -9,7 +9,7 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>exit_to_app</mat-icon>
   </button>
-</mat-toolbar>
+</mat-toolbar> -->
 
 <div class="spinner"><mat-spinner *ngIf="loading"></mat-spinner></div>
 
@@ -27,13 +27,13 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="remove(post.id)">
+      <button mat-fab color="warn" (click)="remove(post.id)" aria-label="Example icon button with a home icon">
         <mat-icon>delete_forever</mat-icon>
       </button>
-      <button mat-button>
+      <button mat-fab color="warn" aria-label="Example icon button with a home icon">
         <mat-icon>create</mat-icon>
       </button>
-      <button mat-button [routerLink]="['/post', post.id]">
+      <button mat-fab color="warn" [routerLink]="['/post', post.id]" aria-label="Example icon button with a home icon">
         <mat-icon>open_in_new</mat-icon>
       </button>
     </mat-card-actions>
