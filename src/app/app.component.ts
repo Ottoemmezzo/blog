@@ -6,13 +6,14 @@ import { AuthService } from './services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'blog';
 
   constructor(private authSrv: AuthService) {}
+
   ngOnInit(): void {
-    if (localStorage.getItem('user')) {
-      this.authSrv.isLoggedin.next(true);
+    if(localStorage.getItem('user')) {
+      this.authSrv.isLoggedin.next(true)
     }
   }
 
