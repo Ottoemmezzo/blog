@@ -32,7 +32,7 @@ export class PostsComponent implements OnInit {
 
   remove(id: number) {
     this.sub = this.fetchSrv.removePost(id).subscribe(() => {
-      this.posts.filter((post) => post.id != id);
+      this.posts = this.posts.filter((post) => post.id != id);
     })
   }
 
