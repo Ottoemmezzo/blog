@@ -16,6 +16,7 @@ export interface Profile {
 @Injectable({
   providedIn: 'root'
 })
+
 export class FetchService {
   posts: Posts[] = []
   Url = 'https://6396ee0a86d04c763384ef91.mockapi.io/posts';
