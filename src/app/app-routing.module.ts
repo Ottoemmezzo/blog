@@ -18,7 +18,10 @@ const routes: Routes = [
   },
   {
     path: 'post/:id',
-    component: DetailComponent
+    component: DetailComponent,
+    canActivate: [
+      AuthGuard
+    ]
   },
   {
     path: '',
@@ -26,11 +29,17 @@ const routes: Routes = [
   },
   {
     path: 'post/edit/:id',
-    component: EditComponent
+    component: EditComponent,
+    canActivate: [
+      AuthGuard
+    ]
   },
   {
     path: 'add',
-    component: AddPostComponent
+    component: AddPostComponent,
+    canActivate: [
+      AuthGuard
+    ]
   },
   {
     path: 'login',

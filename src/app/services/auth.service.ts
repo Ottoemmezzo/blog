@@ -26,11 +26,6 @@ export class AuthService {
 
   user: User | undefined;
 
-  // authSubject = new BehaviorSubject<null|User>(null);
-  // user$ = this.authSubject.asObservable()
-  // isLoggedIn$ = this.user$.pipe(map(u=>!!u))
-
-
   isLoggedin = new BehaviorSubject<boolean>(false);
   toggle = this.isLoggedin.asObservable();
 
